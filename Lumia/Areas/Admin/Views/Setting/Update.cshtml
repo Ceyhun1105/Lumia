@@ -1,0 +1,29 @@
+﻿@model Setting
+
+
+<div class="container pt-5 pb-5">
+    <div class="container">
+
+        <h1 style="text-align:center">Update Settings</h1>
+
+    </div>
+    <div>
+
+        <form method="post">
+            <div class="row">
+
+
+                <div class="form-group col-4">
+                    <label asp-for="Value">@Model.Key</label>
+                    <input asp-for="Value" class="form-control" placeholder="Value">
+                    <span asp-validation-for="Value" class="text-danger"></span>
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-action="index" asp-controller="setting" class="btn btn-danger">Cancel</a>
+        </form>
+
+    </div>
+</div>
+

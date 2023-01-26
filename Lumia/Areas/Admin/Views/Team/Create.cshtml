@@ -1,0 +1,67 @@
+﻿@model Team
+
+
+<div class="container pt-5 pb-5">
+    <div class="container">
+
+        <h1 style="text-align:center">Create Teams</h1>
+
+    </div>
+    <div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+
+         
+            <div class="form-group col-4">
+                <label asp-for="FullName">FullName</label>
+                <input asp-for="FullName" class="form-control" placeholder="FullName">
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-4">
+                    <label asp-for="InstaUrl">InstaUrl</label>
+                    <input asp-for="InstaUrl" class="form-control" placeholder="InstaUrl">
+                    <span asp-validation-for="InstaUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group col-4">
+                    <label asp-for="FbUrl">FbUrl</label>
+                    <input asp-for="FbUrl" class="form-control" placeholder="FbUrl">
+                    <span asp-validation-for="FbUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group col-4">
+                    <label asp-for="TwitterUrl">TwitterUrl</label>
+                    <input asp-for="TwitterUrl" class="form-control" placeholder="TwitterUrl">
+                    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group col-4">
+                    <label asp-for="LnUrl">LnUrl</label>
+                    <input asp-for="LnUrl" class="form-control" placeholder="LnUrl">
+                    <span asp-validation-for="LnUrl" class="text-danger"></span>
+            </div>
+             <div class="form-group col-4">
+                <label asp-for="ImageFile">ImageFile</label>
+                    <input asp-for="ImageFile" class="form-control" placeholder="ImageFile">
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group col-6">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="5" placeholder="Description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group col-6">
+                    <label asp-for="PositionId">Position</label>
+                    <select asp-items="@(new SelectList(ViewBag.Positions,"Id","Name"))" asp-for="PositionId" class="form-control" placeholder="PositionId"></select>
+                    <span asp-validation-for="PositionId" class="text-danger"></span>
+            </div>
+
+
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="index" asp-controller="team" class="btn btn-danger">Cancel</a>
+        </form>
+
+    </div>
+</div>
+
